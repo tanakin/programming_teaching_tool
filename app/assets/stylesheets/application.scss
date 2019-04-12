@@ -13,3 +13,36 @@
  */
 
  @import "bootstrap";
+
+ $color-text: #ffffff;
+ $color-text_2: #ffffff80;
+
+
+ li {
+
+    a { 
+
+        color: $color-text;
+
+    }
+
+
+ }
+
+ .navbar-brand {
+     font-size: 1.8rem;
+ }
+ 
+ li:nth-child(8n) {
+
+    a {
+        
+        color: $color-text_2;
+
+    }
+
+ }
+
+ .footer-nav {
+     padding: 0 1em;
+ }
