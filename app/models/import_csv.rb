@@ -1,5 +1,5 @@
 class ImportCsv < ApplicationRecord
-  def self.import(path)
+  def self.import
     path = File.join Rails.root, "db/csv_data/csv_data.csv"
 
     list = []
