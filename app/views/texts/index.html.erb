@@ -1,3 +1,4 @@
+<%# ヘッダー %>
 <nav class="navbar navbar-expand-sm navbar-dark bg-danger">
     <div class="navbar-brand">Gyakuten</div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,7 +17,34 @@
         </ul>
 </nav>
 <div style="height: 500px;">
-
+<%# テーブル %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">
+        スキル
+      </th>
+      <th scope="col">
+        ジャンル
+      </th>
+      <th scope="col">
+        内容
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <% @texts.each do |text| %>
+      <tr>
+        <th scope="row"></th>
+        <td>
+        <%= text.title %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%# フッター %>
 </div>
 <nav class="navbar navbar-expand-sm navbar-dark bg-danger">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
