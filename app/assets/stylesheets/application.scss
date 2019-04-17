@@ -16,6 +16,7 @@
 
  $color-text: #ffffff;
  $color-text_2: #ffffff80;
+ $color-header: #dc3545;
 
 
  li {
@@ -25,12 +26,18 @@
         color: $color-text;
 
     }
+    
+    :hover {
 
+            text-decoration: none;
+        }
 
  }
 
  .navbar-brand {
-     font-size: 1.8rem;
+
+    font-size: 1.8rem;
+
  }
  
  li:nth-child(8n) {
@@ -44,5 +51,42 @@
  }
 
  .footer-nav {
-     padding: 0 1em;
+
+    padding: 0 1em;
+
+ }
+
+ .thead-color {
+
+    background-color: $color-header;
+
+ }
+
+ table {
+
+     width: 40% !important;
+
+     thead {
+
+            th {
+
+            color: $color-text;
+        
+                a {
+
+                    text-decoration: none;
+                    color: $color-text;
+                }
+
+            }   
+
+    }
+
+ }
+
+ footer {
+
+     position: fixed;
+     width: 100%;
+
  }
