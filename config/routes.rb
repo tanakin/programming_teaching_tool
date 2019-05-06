@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/texts', to: 'texts#index'
 
   get 'users/index'
-  root to: 'users#index'
+  root to: 'texts#index'
 
 
 
