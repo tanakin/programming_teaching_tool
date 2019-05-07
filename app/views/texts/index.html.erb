@@ -2,59 +2,75 @@
 <header>  
   <nav class="navbar navbar-expand-sm navbar-dark bg-danger">
       <div class="navbar-brand">Gyakuten</div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav4">
-          <ul class="navbar-nav mr-auto">
-              <li class="nav-item nav-link"><%= link_to 'テキスト教材', root_path %></li>
-          </ul>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav4">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item nav-link"><%= link_to 'テキスト教材', root_path %></li>
+        </ul>
+      </div>
   </nav>
 </header>
-<div style="height: 100%;">
-<%# テーブル %>
-<table class="table table-striped m-auto">
-  <thead class="thead-color">
-    <tr>
-      <th scope="col">
-        <%= link_to 'スキル', texts_path(id: @sort)  %>
-      </th>
-      <th scope="col">
-        ジャンル
-      </th>
-      <th scope="col">
-        内容
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @texts.each do |text| %>
-      <tr>
-        <th scope="row">
-          <%= "Lv.#{text.id}" %>
-        </th>
-        <td>
-          <%= text.genre %>
-        </td>
-        <td>
-          <%= text.title %>
-        </td>
-      </tr>
+<div class="container">
+  <div>
+    <%= search_form_for @q, class: 'mt-3 mb-5' do |f| %>
+      <div class="form-group">
+        <%= f.search_field :title_cont, class: 'form-control', placeholder: 'タイトル' %>
+      </div>
+      <div class="form-group">
+        <%= f.search_field :contents_cont, class: 'form-control', placeholder: '内容' %>
+      </div>
+      <div class="form-group">
+        <%= f.submit class: 'btn btn-primary' %>
+      </div>
     <% end %>
-  </tbody>
-</table>
-<%# フッター %>
+  </div>
+
+  <%# テーブル %>
+  <table class="table table-striped m-auto">
+    <thead class="thead-color">
+      <tr>
+        <th scope="col">
+          <%= link_to 'スキル', texts_path(id: @sort)  %>
+        </th>
+        <th scope="col">
+          ジャンル
+        </th>
+        <th scope="col">
+          内容
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @texts.each do |text| %>
+        <tr>
+          <th scope="row">
+            <%= "Lv.#{text.id}" %>
+          </th>
+          <td>
+            <%= text.genre %>
+          </td>
+          <td>
+            <%= text.title %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
+<%# フッター %>
 <footer>
   <nav class="navbar navbar-expand-sm navbar-dark bg-danger">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav4">
-          <ul class="navbar-nav m-auto">
-              <li class="nav-item nav-link"><%= link_to '教材一覧', root_path, class: 'footer-nav' %></li>
-              <li class="nav-item nav-link"><%= link_to 'ブログ', root_path, class: 'footer-nav' %></li>
-              <li class="nav-item nav-link"><%= link_to 'YouTube', root_path, class: 'footer-nav' %></li>
-          </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav4">
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item nav-link"><%= link_to '教材一覧', root_path, class: 'footer-nav' %></li>
+        <li class="nav-item nav-link"><%= link_to 'ブログ', root_path, class: 'footer-nav' %></li>
+        <li class="nav-item nav-link"><%= link_to 'YouTube', root_path, class: 'footer-nav' %></li>
+      </ul>
+    </div>
   </nav>
 </footer>
