@@ -1,16 +1,10 @@
 class TextsController < ApplicationController
 
     def index
-        if request.fullpath.include?('desc')
-            @texts = Text.all.desc_sort
-            @sort = "asc"
-        else
-            @texts = Text.all.asc_sort
-            @sort = "desc"
-        end
-
+        path_desc = request.fullpath.include?('desc')
+        @texts = Text.data_sort(path_desc)
+        @sort = Text.sort_key(path_desc)
     end
-
 
 
     private
