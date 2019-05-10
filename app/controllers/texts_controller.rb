@@ -6,13 +6,8 @@ class TextsController < ApplicationController
         @sort = Text.sort_key(path_desc)
     end
 
-
-    private
-
-    def text_params
-    
-        params.require(:text).permit(:genre, :title, :content)
-
+    def show
+        @text = Text.find(params[:id])
     end
 
 end

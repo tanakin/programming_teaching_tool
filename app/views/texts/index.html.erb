@@ -1,17 +1,3 @@
-<%# ヘッダー %>
-<header>  
-  <nav class="navbar navbar-expand-sm navbar-dark bg-danger">
-      <div class="navbar-brand">Gyakuten</div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav4">
-          <ul class="navbar-nav mr-auto">
-              <li class="nav-item nav-link"><%= link_to 'テキスト教材', root_path %></li>
-          </ul>
-  </nav>
-</header>
-<div style="height: 100%;">
 <%# テーブル %>
 <table class="table table-striped m-auto">
   <thead class="thead-color">
@@ -31,30 +17,15 @@
     <% @texts.each do |text| %>
       <tr>
         <th scope="row">
-          <%= "Lv.#{text.id}" %>
+          <%= "Lv.#{text.id.to_i - 1}" %>
         </th>
         <td>
           <%= text.genre %>
         </td>
-        <td>
-          <%= text.title %>
+        <td class = "text-decoration">
+          <%= link_to text.title, "/texts/#{text.id}" %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%# フッター %>
-</div>
-<footer>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-danger">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav4">
-          <ul class="navbar-nav m-auto">
-              <li class="nav-item nav-link"><%= link_to '教材一覧', root_path, class: 'footer-nav' %></li>
-              <li class="nav-item nav-link"><%= link_to 'ブログ', root_path, class: 'footer-nav' %></li>
-              <li class="nav-item nav-link"><%= link_to 'YouTube', root_path, class: 'footer-nav' %></li>
-          </ul>
-  </nav>
-</footer>
