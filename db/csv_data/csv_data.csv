@@ -12,13 +12,13 @@ title,contents,genre
 今回は、コントローラに書いた記述をモデルにロジックとして移行してみます！
 
 
-# controllerの記述
+# 「controllerの記述」
 - 実装内容
 テーブルのデータを降順、昇順にする
 
 - コード
 
-
+### texts_contoroller.rb
 ```rb:texts_contoroller.rb
 class TextsController < ApplicationController
  
@@ -33,7 +33,7 @@ class TextsController < ApplicationController
     end
 end
 ```
-
+### text.rb
 ```rb:text.rb
 class Text < ApplicationRecord
     
@@ -41,7 +41,7 @@ class Text < ApplicationRecord
     scope :desc_sort, ->{ order(id: :desc)}
 end
 ```
-
+### index.html.erb
 ```rb:index.html.erb
 <%= link_to 'スキル', texts_path(id: @sort) %>
 ```
@@ -50,7 +50,7 @@ end
 
 
 
-#モデルにてロジックを書く
+# 「モデルにてロジックを書く」
 それでは、早速上記のコントローラをロジックに移行していきましょう。
 
 まず、目指すべきなのは上記の実装をメソッド化することです。
@@ -58,7 +58,7 @@ end
 
 私はこのように書きました。
 
-
+### texts_controller.rb
 ```rb:texts_controller.rb
 class TextsController < ApplicationController
 
@@ -70,7 +70,7 @@ class TextsController < ApplicationController
 
 end
 ```
-
+### text.rb
 ```rb:text.rb
 class Text < ApplicationRecord
     
@@ -96,10 +96,10 @@ class Text < ApplicationRecord
 end
 ```
 
-- [x] メソッドの引数にpathを設定
-- [x] メソッド内でpathによる条件分岐→pathにパラメータを割り振っている状態
-- [x] １番目のメソッドで実際に昇順、降順の並び替えを実施
-- [x] ２番目のメソッドはpathへのパラメータを割り振る用のメソッド、文字列をstringsクラスにすることを忘れない  
+- メソッドの引数にpathを設定
+- メソッド内でpathによる条件分岐→pathにパラメータを割り振っている状態
+- １番目のメソッドで実際に昇順、降順の並び替えを実施
+- ２番目のメソッドはpathへのパラメータを割り振る用のメソッド、文字列をstringsクラスにすることを忘れない  
 
 
 これからもどんどんロジック書いていきます！
