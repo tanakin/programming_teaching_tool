@@ -1,0 +1,13 @@
+<div class="clearfix">
+  <%= search_form_for @q, class: 'mt-1 mb-1 form-inline float-right' do |f| %>
+    <div class="form-group mr-2">
+      <%= f.search_field :title_cont, class: 'form-control', placeholder: 'タイトル' %>
+    </div>
+    <div class="form-group mr-2">
+      <%= f.search_field :contents_cont, class: 'form-control', placeholder: '内容' %>
+    </div>
+    <div class="form-group">
+      <%= f.submit class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
