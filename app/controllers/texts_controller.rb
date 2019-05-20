@@ -8,17 +8,13 @@ class TextsController < ApplicationController
             @texts = Text.all.asc_sort
             @sort = "desc"
         end
-
+        @q = @texts.ransack(params[:q])
+        @texts = @q.result
     end
-
-
 
     private
 
     def text_params
-    
-        params.require(:text).permit(:genre, :title, :content)
-
+        params.require(:text).permit(:genre, :title, :contents)
     end
-
 end

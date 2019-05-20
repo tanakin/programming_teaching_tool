@@ -281,6 +281,7 @@ DEPENDENCIES
   mini_racer
   puma (~> 3.11)
   rails (~> 5.2.2)
+  ransack
   rb-readline
   redcarpet (~> 2.3.0)
   sass-rails (~> 5.0)
