@@ -11,7 +11,17 @@
 
   <body>
     <div class="wrapper">
+      <%# ヘッダー %>
+      <header class="mb-2">  
+        <%= render 'nav', { header: true} %>
+      </header>
+      
       <%= yield %>
+
+      <%# フッター %>
+      <footer>
+        <%= render 'nav', { header: false } %>
+      </footer>
     </div>
   </body>
 </html>
