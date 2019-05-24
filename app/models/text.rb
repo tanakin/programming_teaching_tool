@@ -4,16 +4,16 @@ class Text < ApplicationRecord
     scope :desc_sort, ->{ order(id: :desc)}
     scope :genre_sort, ->{ order(genre: :desc, id: :asc)}
 
-    def self.data_sort(path)
-        if path
+    def self.data_sort(request)
+        if self.path_include_desc?(request)
             Text.all.desc_sort
         else
             Text.all.asc_sort
         end
     end
     
-    def self.sort_key(path)
-        if path
+    def self.sort_key(request)
+        if self.path_include_desc?(request)
             "asc"
         else
             "desc"
@@ -22,6 +22,10 @@ class Text < ApplicationRecord
 
     def self.genre_sort_method
         Text.all.genre_sort
+    end
+
+    def self.path_include_desc?(path)
+        path.fullpath.include?('desc')
     end
 
 end
