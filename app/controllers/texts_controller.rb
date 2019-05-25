@@ -1,15 +1,13 @@
 class TextsController < ApplicationController
 
     def index
-        if request.fullpath.include?('desc')
-            @texts = Text.all.desc_sort
-            @sort = "asc"
-        else
-            @texts = Text.all.asc_sort
-            @sort = "desc"
-        end
+        
+        @texts = Text.data_sort(request)
+        @sort = Text.sort_key(request)
+
         @q = @texts.ransack(params[:q])
         @texts = @q.result
+
     end
 
     private
@@ -17,4 +15,5 @@ class TextsController < ApplicationController
     def text_params
         params.require(:text).permit(:genre, :title, :contents)
     end
+    
 end
