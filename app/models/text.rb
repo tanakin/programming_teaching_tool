@@ -1,5 +1,5 @@
 class Text < ApplicationRecord
-    
+
     scope :asc_sort, ->{ order(id: :asc)}
     scope :desc_sort, ->{ order(id: :desc)}
     scope :genre_sort, ->{ order(genre: :desc, id: :asc)}
@@ -26,6 +26,14 @@ class Text < ApplicationRecord
 
     def self.path_include_desc?(path)
         path.fullpath.include?('desc')
+    end
+
+    def self.ransackable_attributes(auth_object = nil)
+        %w[title contents]
+    end
+
+    def self.ransackable_associations(auth_object = nil)
+        []
     end
 
 end
