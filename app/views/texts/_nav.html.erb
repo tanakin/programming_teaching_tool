@@ -9,11 +9,12 @@
     <% if header == true %>
       <ul class="navbar-nav">
         <%= render 'link', { links: ['テキスト教材'] } %>
+      </ul>
     <% else %>
       <ul class="navbar-nav m-auto">
         <%= render 'link', { links: ['教材一覧', 'ブログ', 'YouTube'] } %>
-    <% end %>
       </ul>
+    <% end %>
   </div>
   <% if header == true %>
     <%= render 'search' %>
