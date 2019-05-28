@@ -8,7 +8,12 @@
   <div class="collapse navbar-collapse" id="navbarNav4">
     <% if header == true %>
       <ul class="navbar-nav">
-        <%= render 'link', { links: ['テキスト教材'] } %>
+        <% if user_signed_in? %>
+          <%= render 'link', { links: ['テキスト教材'] } %>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'ユーザー登録', new_user_session_path %>
+        <% end %>
       </ul>
     <% else %>
       <ul class="navbar-nav m-auto">

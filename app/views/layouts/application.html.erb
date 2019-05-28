@@ -15,8 +15,13 @@
       <header class="mb-2">  
         <%= render 'nav', { header: true} %>
       </header>
-      
-      <%= yield %>
+      <%# Flash messages %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <div class="container">
+        <%= yield %>
+      </div>
 
       <%# フッター %>
       <footer>
