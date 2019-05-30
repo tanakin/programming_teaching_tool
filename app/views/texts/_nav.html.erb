@@ -2,26 +2,28 @@
   <% if header == true %>
     <div class="navbar-brand">Gyakuten</div>
   <% end %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav4">
+  <% if user_signed_in? %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav4">
+      <% if header == true %>
+        <ul class="navbar-nav">
+            <%= render 'link', { links: ['テキスト教材'] } %>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+        </ul>
+      <% else %>
+        <ul class="navbar-nav m-auto">
+          <%= render 'link', { links: ['教材一覧', 'ブログ', 'YouTube'] } %>
+        </ul>
+      <% end %>
+    </div>
     <% if header == true %>
-      <ul class="navbar-nav">
-        <% if user_signed_in? %>
-          <%= render 'link', { links: ['テキスト教材'] } %>
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to 'ユーザー登録', new_user_session_path %>
-        <% end %>
-      </ul>
-    <% else %>
-      <ul class="navbar-nav m-auto">
-        <%= render 'link', { links: ['教材一覧', 'ブログ', 'YouTube'] } %>
-      </ul>
+      <%= render 'search' %>
     <% end %>
-  </div>
-  <% if header == true %>
-    <%= render 'search' %>
+  <% else %>
+    <% if header == true %>
+      <%= link_to 'ログイン', new_user_session_path %>
+    <% end %>
   <% end %>
 </nav>

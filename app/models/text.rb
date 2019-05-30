@@ -9,4 +9,6 @@ class Text < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     []
   end
+
+  belongs_to :user
 end

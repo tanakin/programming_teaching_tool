@@ -13,19 +13,19 @@
     <div class="wrapper">
       <%# ヘッダー %>
       <header class="mb-2">  
-        <%= render 'nav', { header: true} %>
+        <%= render 'texts/nav', { header: true} %>
       </header>
       <%# Flash messages %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-
+  
       <div class="container">
         <%= yield %>
       </div>
 
       <%# フッター %>
       <footer>
-        <%= render 'nav', { header: false } %>
+        <%= render 'texts/nav', { header: false } %>
       </footer>
     </div>
   </body>
