@@ -15,11 +15,13 @@
       <header class="mb-2">  
         <%= render 'texts/nav', { header: true} %>
       </header>
-      <%# Flash messages %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-  
+      
       <div class="container">
+        <%# Flash messages %>
+        <div class="text-center">
+          <%= render 'layouts/flash_messages' %>
+        </div>
+        
         <%= yield %>
       </div>
 
