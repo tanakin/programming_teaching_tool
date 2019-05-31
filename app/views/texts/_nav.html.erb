@@ -10,7 +10,7 @@
       <% if header == true %>
         <ul class="navbar-nav">
             <%= render 'link', { links: ['テキスト教材'] } %>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+            <li class="nav-item nav-link"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "pr-3" %></li>
         </ul>
       <% else %>
         <ul class="navbar-nav m-auto">

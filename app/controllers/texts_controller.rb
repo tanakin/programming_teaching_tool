@@ -2,10 +2,10 @@ class TextsController < ApplicationController
 
     def index
         if request.fullpath.include?('desc')
-            @texts = Text.all.desc_sort
+            @texts = current_user.texts.all.desc_sort
             @sort = "asc"
         else
-            @texts = Text.all.asc_sort
+            @texts = current_user.texts.all.asc_sort
             @sort = "desc"
         end
         @q = @texts.ransack(params[:q])
