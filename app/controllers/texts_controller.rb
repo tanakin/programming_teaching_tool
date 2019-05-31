@@ -14,7 +14,7 @@ class TextsController < ApplicationController
 
     private
 
-    def text_params
-        params.require(:text).permit(:genre, :title, :contents)
-    end
+    # def text_params
+    #     params.require(:text).permit(:genre, :title, :contents)
+    # end
 end
