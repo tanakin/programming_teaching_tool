@@ -32,13 +32,10 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "次回から自動的にログイン"
-    models:
-      user: "ユーザ"
   devise:
     failure:
       user:
-        not_found: "%{record}は見つかりませんでした"
-        already_confirmed: "は既に登録済みです"
+        not_found_in_database: "メールアドレスが登録されていません"
       unauthenticated: 'ログインしてください。'
 #      unauthenticated: 'You need to sign in or sign up before continuing.'
       unconfirmed: '本登録を行ってください。'
