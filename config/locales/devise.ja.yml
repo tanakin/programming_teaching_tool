@@ -36,6 +36,9 @@ ja:
       user: "ユーザ"
   devise:
     failure:
+      user:
+        not_found: "%{record}は見つかりませんでした"
+        already_confirmed: "は既に登録済みです"
       unauthenticated: 'ログインしてください。'
 #      unauthenticated: 'You need to sign in or sign up before continuing.'
       unconfirmed: '本登録を行ってください。'
