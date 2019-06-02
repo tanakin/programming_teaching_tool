@@ -12,9 +12,4 @@ class TextsController < ApplicationController
         @texts = @q.result
     end
 
-    private
-
-    # def text_params
-    #     params.require(:text).permit(:genre, :title, :contents)
-    # end
 end
