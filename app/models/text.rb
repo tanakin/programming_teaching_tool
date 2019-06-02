@@ -24,16 +24,18 @@ class Text < ApplicationRecord
         Text.all.genre_sort
     end
 
-    def self.path_include_desc?(path)
-        path.fullpath.include?('desc')
-    end
-
+    
     def self.ransackable_attributes(auth_object = nil)
         %w[title contents]
     end
-
+    
     def self.ransackable_associations(auth_object = nil)
         []
     end
+    
+    private
 
+    def self.path_include_desc?(path)
+        path.fullpath.include?('desc')
+    end
 end
