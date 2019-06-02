@@ -1,36 +1,31 @@
-
-<div class="container">
-
-  <%# テーブル %>
-  <table class="table table-striped m-auto">
-    <thead class="thead-color">
+<%# テーブル %>
+<table class="table table-striped m-auto">
+  <thead class="thead-color">
+    <tr>
+      <th scope="col">
+        <%= link_to 'スキル', texts_path(id: @sort)  %>
+      </th>
+      <th scope="col">
+        ジャンル
+      </th>
+      <th scope="col">
+        内容
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @texts.each do |text| %>
       <tr>
-        <th scope="col">
-          <%= link_to 'スキル', texts_path(id: @sort)  %>
+        <th scope="row">
+          <%= "Lv.#{text.id}" %>
         </th>
-        <th scope="col">
-          ジャンル
-        </th>
-        <th scope="col">
-          内容
-        </th>
+        <td>
+          <%= text.genre %>
+        </td>
+        <td>
+          <%= text.title %>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-      <% @texts.each do |text| %>
-        <tr>
-          <th scope="row">
-            <%= "Lv.#{text.id}" %>
-          </th>
-          <td>
-            <%= text.genre %>
-          </td>
-          <td>
-            <%= text.title %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  
-</div>
+    <% end %>
+  </tbody>
+</table>

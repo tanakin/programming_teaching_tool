@@ -13,14 +13,21 @@
     <div class="wrapper">
       <%# ヘッダー %>
       <header class="mb-2">  
-        <%= render 'nav', { header: true} %>
+        <%= render 'texts/nav', { header: true} %>
       </header>
       
-      <%= yield %>
+      <div class="container">
+        <%# Flash messages %>
+        <div class="text-center">
+          <%= render 'layouts/flash_messages' %>
+        </div>
+        
+        <%= yield %>
+      </div>
 
       <%# フッター %>
       <footer>
-        <%= render 'nav', { header: false } %>
+        <%= render 'texts/nav', { header: false } %>
       </footer>
     </div>
   </body>
