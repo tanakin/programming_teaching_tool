@@ -11,9 +11,30 @@
 
   <body>
     <div class="wrapper">
+<<<<<<< HEAD
         <div style="height: 100%;">
           <%= yield %>
         </div>
+=======
+      <%# ヘッダー %>
+      <header class="mb-2">  
+        <%= render 'texts/nav', { header: true} %>
+      </header>
+      
+      <div class="container">
+        <%# Flash messages %>
+        <div class="text-center">
+          <%= render 'layouts/flash_messages' %>
+        </div>
+        
+        <%= yield %>
+      </div>
+
+      <%# フッター %>
+      <footer>
+        <%= render 'texts/nav', { header: false } %>
+      </footer>
+>>>>>>> master
     </div>
   </body>
 </html>

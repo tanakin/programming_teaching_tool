@@ -10,7 +10,8 @@ class ImportCsv < ApplicationRecord
       list << {
         title: row['title'],
         contents: row['contents'],
-        genre: row['genre']
+        genre: row['genre'],
+        user_id: row['user_id']
       }
     end
 
