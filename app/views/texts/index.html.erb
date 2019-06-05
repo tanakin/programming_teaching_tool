@@ -1,42 +1,4 @@
-<<<<<<< HEAD
-<%# ヘッダー %>
-<header>  
-  <nav class="navbar navbar-expand-sm navbar-dark bg-danger mb-2">
-      <div class="navbar-brand">Gyakuten</div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav4">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item nav-link"><%= link_to 'テキスト教材', root_path %></li>
-          <% if current_admin_user %>
-            <li class="nav-item nav-link"><%= link_to 'ログアウト', destroy_admin_user_session_path %></li>
-          <% else %>
-            <li class="nav-item nav-link"><%= link_to 'ログイン（管理者専用）', admin_user_session_path %></li>
-          <% end %>
-        </ul>
-      </div>
-      <%= render 'search' %>
-  </nav>
-</header>
 
-<%# テーブル %>
-<div class="container">
-
-  <h1>Text</h1>
-
-  <table class="table table-striped m-auto">
-    <thead class="thead-color">
-      <tr>
-        <th scope="col">
-          <%= link_to 'スキル', texts_path(id: @sort) %>
-        </th>
-        <th scope="col">
-          <%= link_to 'ジャンル', texts_path(genre: :sort) %>
-        </th>
-        <th scope="col">
-          内容
-=======
 <%# テーブル %>
 <table class="table table-striped m-auto">
   <thead class="thead-color">
@@ -57,7 +19,6 @@
       <tr>
         <th scope="row">
           <%= "Lv.#{text.id}" %>
->>>>>>> master
         </th>
         <td>
           <%= text.genre %>
@@ -66,7 +27,6 @@
           <%= text.title %>
         </td>
       </tr>
-<<<<<<< HEAD
     </thead>
     <tbody>
       <% @texts.each do |text| %>
@@ -85,24 +45,3 @@
     </tbody>
   </table>
 </div>
-
-<%# フッター %>
-<footer>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-danger">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav4">
-      <ul class="navbar-nav m-auto">
-        <li class="nav-item nav-link"><%= link_to '教材一覧', root_path, class: 'footer-nav' %></li>
-        <li class="nav-item nav-link"><%= link_to 'ブログ', root_path, class: 'footer-nav' %></li>
-        <li class="nav-item nav-link"><%= link_to 'YouTube', root_path, class: 'footer-nav' %></li>
-      </ul>
-    </div>
-  </nav>
-</footer>
-=======
-    <% end %>
-  </tbody>
-</table>
->>>>>>> master
