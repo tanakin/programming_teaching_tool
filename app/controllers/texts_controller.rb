@@ -26,6 +26,7 @@ class TextsController < ApplicationController
     end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     def show
         @text = Text.find(params[:id])
     end
@@ -35,4 +36,6 @@ class TextsController < ApplicationController
     #     params.require(:text).permit(:genre, :title, :contents)
     # end
 >>>>>>> master
+=======
+>>>>>>> a1b582b6e3e6694affab4d9775ab882a8be64a01
 end
