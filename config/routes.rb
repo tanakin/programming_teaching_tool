@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get '/texts', to: 'texts#index'
   root to: 'texts#index'
 
+
 end

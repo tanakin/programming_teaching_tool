@@ -16,6 +16,7 @@
 
  $color-text: #ffffff;
  $color-text_2: #ffffff80;
+ $color-text_3: #212529;
  $color-header: #dc3545;
 
 
@@ -56,6 +57,13 @@
 
 //  }
 
+ h1 {
+
+    text-align: center;
+    padding: 2rem 0;
+
+ }
+
  .thead-color {
 
     background-color: $color-header;
@@ -70,17 +78,43 @@
 
             th {
 
-            color: $color-text;
-        
+                color: $color-text;
+
                 a {
 
                     text-decoration: none;
                     color: $color-text;
+
                 }
 
-            }   
+            }
+            
+            
+        }
+        
+        tbody{
+            
+            td {
+    
+                color: $color-text_3;
+    
+                a {
+    
+                    text-decoration: none;
+                    color: $color-text_3;
 
-    }
+                    &:hover {
+
+                        text-decoration: none;
+                        
+                    }
+
+                }
+            
+                
+            }
+
+        }
 
  }
 

@@ -1,0 +1,14 @@
+<div class = "container" >
+    <div class = "row　justify-content-center text-align-center">
+        <div class = "col-8 col-md-8 m-auto ">
+            <%# マークダウンされたテキスト %>
+            <%
+            text =<<~TEXT
+                #{@text.contents}
+            TEXT
+            %>
+            <%# ここまで %>
+            <%= markdown(text).html_safe %>
+        </div>
+    </div>
+</div>
