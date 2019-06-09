@@ -9,7 +9,7 @@
     <% if header == true %>
       <% if user_signed_in? %>
         <ul class="navbar-nav">
-          <%= render 'layouts/link', { links: ['テキスト教材'] } %>
+          <%= render 'layouts/link', { links: ['テキスト教材'] } %> 
           <li class="nav-item nav-link"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "pr-3" %></li>
         </ul>
       <% else %>
@@ -19,7 +19,7 @@
       <% end %>
     <% else %>
       <ul class="navbar-nav m-auto">
-        <%= render 'layouts/link', { links: ['教材一覧', 'ブログ', 'YouTube'] } %>
+        <%= render 'layouts/link', { links: ['教材一覧', 'ブログ', 'YouTube'] } %> 
       </ul>
     <% end %>
   </div>
