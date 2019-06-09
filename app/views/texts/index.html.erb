@@ -1,10 +1,9 @@
 
-<%# テーブル %>
 <table class="table table-striped m-auto">
   <thead class="thead-color">
     <tr>
       <th scope="col">
-        <%= link_to 'スキル', texts_path(id: @sort)  %>
+        <%= link_to 'スキル', texts_path(id: @sort) %>
       </th>
       <th scope="col">
         <%= link_to 'ジャンル', texts_path(genre: :sort) %>
@@ -18,13 +17,13 @@
     <% @texts.each do |text| %>
       <tr>
         <th scope="row">
-          <%= "Lv.#{text.id.to_i - @first_text.id.to_i + 1}" %>
+          <%= "Lv.#{ text.id.to_i - @first_text.id.to_i + 1 }" %>
         </th>
         <td>
           <%= text.genre %>
         </td>
         <td class = "text-decoration">
-          <%= link_to text.title, "/texts/#{text.id}" %>
+          <%= link_to text.title, "/texts/#{text.id }" %>
         </td>
       </tr>
     <% end %>
