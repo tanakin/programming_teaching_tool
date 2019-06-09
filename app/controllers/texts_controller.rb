@@ -13,10 +13,10 @@ class TextsController < ApplicationController
         @first_text = Text.first
         @q = @texts.ransack(params[:q])
         @texts = @q.result
-
+        
     end
-
-    def show
-        @text = Text.find(params[:id])
-    end
+    
+    # def show
+        # @text = Text.find(params[:id])
+    # end
 end
