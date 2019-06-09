@@ -1,4 +1,5 @@
 class Text < ApplicationRecord
+    # belongs_to :user
 
     scope :asc_sort, ->{ order(id: :asc)}
     scope :desc_sort, ->{ order(id: :desc)}
@@ -39,6 +40,5 @@ class Text < ApplicationRecord
         path.fullpath.include?('desc')
     end
 
-    belongs_to :user
 
 end
