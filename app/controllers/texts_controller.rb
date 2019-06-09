@@ -16,7 +16,4 @@ class TextsController < ApplicationController
         
     end
     
-    # def show
-        # @text = Text.find(params[:id])
-    # end
 end
