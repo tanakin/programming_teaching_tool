@@ -23,7 +23,7 @@
       </ul>
     <% end %>
   </div>
-  <% if user_signed_in? && (header == true) %>
-    <%= render 'layouts/search' %>
+  <% if header == true %>
+    <%= yield :search %>
   <% end %>
 </nav>

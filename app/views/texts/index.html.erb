@@ -1,3 +1,9 @@
+<% content_for :search do %>
+  <% if user_signed_in? %>
+    <%= render 'layouts/search' %>
+  <% end %>
+<% end %>
+
 <%# テーブル %>
 <table class="table table-striped m-auto">
   <thead class="thead-color">
