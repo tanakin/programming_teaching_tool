@@ -1,15 +1,18 @@
-<div class = "container" >
-    <div class = "row　justify-content-center text-align-center">
-        <div class = "col-8 col-md-8 m-auto ">
-            <h1 class="h1 border-bottom"><%= @text.title %></h1>
-            <%# マークダウンされたテキスト %>
-            <%
-            text =<<~TEXT
-                #{@text.contents}
-            TEXT
-            %>
-            <%# ここまで %>
-            <%= markdown(text).html_safe %>
-        </div>
-    </div>
+<div class = "row　justify-content-center text-align-center">
+  <div class = "col-8 col-md-8 m-auto ">
+    <h1 class="h1 border-bottom"><%= @text.title %></h1>
+    <%# マークダウンされたテキスト %>
+    <%
+    text =<<~TEXT
+        #{@text.contents}
+    TEXT
+    %>
+    <%# ここまで %>
+    <%= markdown(text).html_safe %>
+  </div>
 </div>
+<div id="button" class="text-center">
+  <div id="replay" class="d-inline btn btn-primary mr-5">再復習</div>
+  <div id="understood" class="d-inline btn btn-primary">理解した</div>
+</div>
+<script src="js/scroll.js"></script>
