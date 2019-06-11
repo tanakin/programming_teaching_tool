@@ -47,8 +47,12 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'solargraph'
-  #メール送信のテスト
+  # メール送信のテスト
   gem 'letter_opener'
+  # デバック
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
 end
 
 group :test do
