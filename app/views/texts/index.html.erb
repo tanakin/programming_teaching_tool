@@ -20,10 +20,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @texts.each do |text| %>
+    <% @texts.each.with_index(1) do |text, i| %>
       <tr>
         <th scope="row">
-          <%= "Lv.#{text.id.to_i - @first_text.id.to_i + 1}" %>
+          <%= "Lv.#{i}" %>
         </th>
         <td>
           <%= text.genre %>
@@ -35,3 +35,4 @@
     <% end %>
   </tbody>
 </table>
+ 
