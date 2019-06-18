@@ -1,4 +1,5 @@
 class ImportCsv < ApplicationRecord
+
   def self.import
     
     Text.delete_all

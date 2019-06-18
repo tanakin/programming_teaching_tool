@@ -1,3 +1,8 @@
+<% content_for :search do %>
+  <% if user_signed_in? %>
+    <%= render 'layouts/search' %>
+  <% end %>
+<% end %>
 
 <%# テーブル %>
 <table class="table table-striped m-auto">
@@ -15,33 +20,19 @@
     </tr>
   </thead>
   <tbody>
-    <% @texts.each do |text| %>
+    <% @texts.each.with_index(1) do |text, i| %>
       <tr>
         <th scope="row">
-          <%= "Lv.#{text.id}" %>
+          <%= "Lv.#{i}" %>
         </th>
         <td>
           <%= text.genre %>
         </td>
-        <td>
-          <%= text.title %>
+        <td class = "text-decoration">
+          <%= link_to text.title, "/texts/#{text.id}" %>
         </td>
       </tr>
-    </thead>
-    <tbody>
-      <% @texts.each do |text| %>
-        <tr>
-          <th scope="row">
-            <%= "Lv.#{text.id.to_i - @first_text.id.to_i + 1}" %>
-          </th>
-          <td>
-            <%= text.genre %>
-          </td>
-          <td class = "text-decoration">
-            <%= link_to text.title, "/texts/#{text.id}" %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+    <% end %>
+  </tbody>
+</table>
+ 
