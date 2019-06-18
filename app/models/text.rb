@@ -39,6 +39,4 @@ class Text < ApplicationRecord
         path.fullpath.include?('desc')
     end
 
-    belongs_to :user
-
 end
