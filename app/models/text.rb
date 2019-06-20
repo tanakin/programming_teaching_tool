@@ -27,7 +27,7 @@ class Text < ApplicationRecord
 
     
     def self.ransackable_attributes(auth_object = nil)
-        %w[title contents]
+        %w[title contents genre user_id]
     end
     
     def self.ransackable_associations(auth_object = nil)
@@ -39,6 +39,5 @@ class Text < ApplicationRecord
     def self.path_include_desc?(path)
         path.fullpath.include?('desc')
     end
-
 
 end
