@@ -12,7 +12,7 @@
   </div>
 </div>
 <div id="button" class="text-center">
-  <div id="replay" class="d-inline btn btn-primary mr-5">再復習</div>
-  <div id="understood" class="d-inline btn btn-primary">理解した</div>
+  <%= link_to '再復習', text_understandings_path(@text.id), method: :delete, class: "btn btn-primary mr-5" %>
+  <%= link_to '理解した', text_understandings_path(@text.id), method: :patch, class: "btn btn-primary mr-5" %>
 </div>
 <script src="js/scroll.js"></script>

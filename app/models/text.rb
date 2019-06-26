@@ -1,5 +1,7 @@
 class Text < ApplicationRecord
 
+    has_many :understandings, dependent: :destroy
+
     scope :asc_sort, ->{ order(id: :asc)}
     scope :desc_sort, ->{ order(id: :desc)}
     scope :genre_sort, ->{ order(genre: :desc, id: :asc)}
