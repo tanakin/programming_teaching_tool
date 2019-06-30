@@ -1,8 +1,7 @@
 class Text < ApplicationRecord
     # belongs_to :user
-
-    has_many :understandings, dependent: :destroy
-
+    has_many :understandings, dependent: :delete_all
+    
     scope :asc_sort, ->{ order(id: :asc)}
     scope :desc_sort, ->{ order(id: :desc)}
     scope :genre_sort, ->{ order(genre: :desc, id: :asc)}
