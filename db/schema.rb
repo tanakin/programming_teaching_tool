@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_11_122831) do
+ActiveRecord::Schema.define(version: 2019_06_23_214846) do
+>>>>>>> origin/add_understanding
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -46,6 +47,16 @@ ActiveRecord::Schema.define(version: 2019_06_11_122831) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_texts_on_user_id"
+  end
+
+  create_table "understandings", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "text_id"
+    t.boolean "understand"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["text_id"], name: "index_understandings_on_text_id"
+    t.index ["user_id"], name: "index_understandings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
