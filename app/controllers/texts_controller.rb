@@ -10,8 +10,9 @@ class TextsController < ApplicationController
         @texts = Text.genre_sort_method
     end
 
-    @q = @texts.ransack(params[:q])
-    @texts = @q.result
+        @first_text = Text.first
+        @q = @texts.ransack(params[:q])
+        @texts = @q.result
 
   end
 
