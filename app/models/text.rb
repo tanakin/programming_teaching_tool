@@ -1,4 +1,5 @@
 class Text < ApplicationRecord
+    # belongs_to :user
 
     scope :asc_sort, ->{ order(id: :asc)}
     scope :desc_sort, ->{ order(id: :desc)}
