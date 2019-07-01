@@ -41,5 +41,4 @@ class Text < ApplicationRecord
     def self.path_include_desc?(path)
         path.fullpath.include?('desc')
     end
-
 end
