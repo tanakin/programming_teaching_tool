@@ -36,6 +36,12 @@ gem 'devise-i18n-views'
 # チャート
 gem 'chart-js-rails', '~> 0.1.4'
 
+# controllerからjavascriptへデータの受け渡し
+gem 'gon'
+
+# ページ遷移の時にJSが読み込まれないのを防ぐ
+gem 'jquery-turbolinks'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

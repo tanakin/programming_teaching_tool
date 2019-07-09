@@ -1,6 +1,8 @@
 class Text < ApplicationRecord
     # belongs_to :user
 
+    has_many :understandings, dependent: :destroy
+
     scope :asc_sort, ->{ order(id: :asc)}
     scope :desc_sort, ->{ order(id: :desc)}
     scope :genre_sort, ->{ order(genre: :desc, id: :asc)}
@@ -39,5 +41,4 @@ class Text < ApplicationRecord
     def self.path_include_desc?(path)
         path.fullpath.include?('desc')
     end
-
 end
