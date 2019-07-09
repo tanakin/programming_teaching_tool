@@ -11,4 +11,14 @@ class Understanding < ApplicationRecord
     understanding.save
   end
 
+  def self.understanding_chart_data(user)
+    understandings = user.understandings
+    understand = understandings.pluck(:understand)
+    true_count = understand.count(true)
+    false_count = understand.count(false)
+    not_read_count = Text.count - (true_count + false_count)
+
+    return true_count, false_count, not_read_count
+  end
+
 end
