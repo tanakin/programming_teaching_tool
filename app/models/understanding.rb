@@ -21,4 +21,23 @@ class Understanding < ApplicationRecord
     return true_count, false_count, not_read_count
   end
 
+
+  def self.replay_list(user)
+    understands = user.understandings.pluck(:text_id, :understand)
+    replay = []
+    understands.each do |understand|
+      replay << understand[0] unless understand[1]
+    end
+    replay
+  end
+  
+  def self.not_read_list(user)
+    understands = user.understandings.pluck(:text_id)
+    text = Text.pluck(:id)
+    not_read = text - understands
+  end
+
+  def self.text_find(ids)
+    Text.where(id: ids).sort
+  end
 end
