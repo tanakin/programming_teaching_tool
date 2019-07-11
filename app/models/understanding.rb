@@ -23,10 +23,10 @@ class Understanding < ApplicationRecord
 
 
   def self.replay_list(user)
-    understands = user.understandings.pluck(:text_id, :understand)
+    understands = user.understandings
     replay = []
     understands.each do |understand|
-      replay << understand[0] unless understand[1]
+      replay << understand.text_id unless understand.understand
     end
     text_find(replay)
   end
