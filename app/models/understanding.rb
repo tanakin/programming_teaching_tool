@@ -18,7 +18,7 @@ class Understanding < ApplicationRecord
     false_count = understand.count(false)
     not_read_count = Text.count - (true_count + false_count)
 
-    return true_count, false_count, not_read_count
+    [true_count, false_count, not_read_count]
   end
 
 
@@ -28,14 +28,17 @@ class Understanding < ApplicationRecord
     understands.each do |understand|
       replay << understand[0] unless understand[1]
     end
-    replay
+    text_find(replay)
   end
   
   def self.not_read_list(user)
     understands = user.understandings.pluck(:text_id)
     text = Text.pluck(:id)
     not_read = text - understands
+    text_find(not_read)
   end
+
+  private
 
   def self.text_find(ids)
     Text.where(id: ids).sort
