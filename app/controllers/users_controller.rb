@@ -1,13 +1,10 @@
 class UsersController < ApplicationController
   def show
-    # understandings = Understanding.where('user_id = ?', current_user.id)
-    understandings = current_user.understandings
-    understand = understandings.pluck(:understand)
-    true_count = understand.count(true)
-    false_count = understand.count(false)
-    not_read_count = Text.count - (true_count + false_count)
-
-    gon.understand = [true_count, false_count, not_read_count]
+    gon.understand = Understanding.understanding_chart_data(current_user)
     gon.labels = ['理解した', '再復習', '未履修']
+
+    @text_replay = Understanding.replay_list(current_user)
+    @text_not_read = Understanding.not_read_list(current_user)
+
   end
 end
