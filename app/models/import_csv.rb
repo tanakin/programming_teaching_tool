@@ -2,7 +2,7 @@ class ImportCsv < ApplicationRecord
 
   def self.import
     
-    Text.delete_all
+    Text.destroy_all
 
     path = File.join Rails.root, "db/csv_data/csv_data.csv"
 
@@ -11,8 +11,7 @@ class ImportCsv < ApplicationRecord
       list << {
         title: row['title'],
         contents: row['contents'],
-        genre: row['genre'],
-        user_id: row['user_id']
+        genre: row['genre']
       }
     end
 
