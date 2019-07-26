@@ -1,5 +1,4 @@
 class Text < ApplicationRecord
-    # belongs_to :user
 
     has_many :understandings, dependent: :destroy
 
