@@ -1,10 +1,8 @@
 class ImportCsv < ApplicationRecord
 
-  def self.import
+  def self.import(path)
     
     Text.destroy_all
-
-    path = File.join Rails.root, "db/csv_data/csv_data.csv"
 
     list = []
     CSV.foreach(path, headers: true) do |row|
