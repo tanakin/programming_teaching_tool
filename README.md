@@ -5,5 +5,5 @@
   - SQLite3 version 1.3.13
 
 - CSVデータでの初期データの投入
-  - コンソール画面でrakeタスク(csv_import:texts)を実行
-    `bundle exec rake csv_import:texts`
+  - コンソール画面でrakeタスク(csv_import:texts)を実行  
+    ```bundle exec rake csv_import:texts```
