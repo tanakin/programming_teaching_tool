@@ -1,8 +1,7 @@
 require 'rails_helper'
-require 'csv'
 
 RSpec.describe ImportCsv, type: :model do
-  describe "csvファイルのインポート" do
+  describe "#import" do
     let(:csv) { "spec/fixtures/csv_test.csv" }
 
     before do
