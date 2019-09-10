@@ -11,5 +11,10 @@ ActiveAdmin.register Text do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+
+filter :title
+filter :contents
+filter :genre
+
 permit_params :title, :contents, :genre
 end
